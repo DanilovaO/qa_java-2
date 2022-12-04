@@ -3,23 +3,18 @@ import org.junit.Test;
 
 public class TestFeline {
 
-    Feline feline = new Feline();
-
-
-
-
     @Test
-    public void TestGetFamily() {
+    public void testGetFamily() {
         Feline feline = new Feline();
         assert feline.getFamily().equals("Кошачьи");
     }
     @Test
-    public void TestGetKittens() {
+    public void testGetKittens() {
         Feline feline = new Feline();
         assert feline.getKittens()==1;
     }
     @Test
-    public void TestGetKittensWithKittensCount() {
+    public void testGetKittensWithKittensCount() {
         Feline feline = new Feline();
         assert feline.getKittens(4)==4;
     }

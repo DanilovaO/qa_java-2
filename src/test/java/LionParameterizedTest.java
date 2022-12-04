@@ -24,8 +24,7 @@ public class LionParameterizedTest {
     }
     @Test
     public void hasManeTest() throws Exception {
-        Feline feline = new Feline();
-        Lion lion = new Lion(sex, feline);
+        Lion lion = new Lion(sex);
         boolean actualResult = lion.doesHaveMane();
         Assert.assertEquals("Пол животного - ", expectedResult, actualResult);
     }

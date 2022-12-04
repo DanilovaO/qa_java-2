@@ -6,27 +6,30 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.util.Arrays;
+import java.util.List;
+
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
 
     @Mock
-    Feline feline;
-
+    Feline feline = new Feline();
+    @Mock
+    Lion lion;
 
     @Test
     public void maleIsNotDefinedTest() throws Exception {
         try {
-            new Lion("и виски", feline);
+            new Lion("и виски");
             assert false;
         } catch (Exception exception){
-            assert true;
+            assert exception.getMessage().equals("Используйте допустимые значения пола животного - самей или самка");
         }
     }
 
     @Test
-    public void getFoodTest() throws Exception {
-        Lion lion = new Lion("Самка", feline);
-        lion.getFood();
+    public void getFoodTest2() throws Exception {
+        feline.getFood("Хищник");
         Mockito.verify(feline).getFood("Хищник"); // в проверке передали другой аргумент
     }
 
